@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MobileUser">
+    <resultMap type="com.mcms.business.mobile.model.MobileUser" id="mobileUserMap">
+        <id property="USERID" column="USERID" />
+        <result  property="USERNAME" column="USERNAME" />
+    </resultMap>
+    <select id="findAll" resultMap="mobileUserMap">
+        select * from MOBILE_USER
+    </select>
+    <select id="findById" parameterType="com.mcms.business.mobile.model.MobileUser" resultMap="mobileUserMap">
+        select * from MOBILE_USER where USERID=#{USERID}
+    </select>
+    <insert id="add" parameterType="com.mcms.business.mobile.model.MobileUser">
+        insert into MOBILE_USER(USERID,USERNAME) values(SEQ_MOBILE_USER_USERID.nextval,#{USERNAME,jdbcType=VARCHAR})
+    </insert>
+    <update id="update" parameterType="com.mcms.business.mobile.model.MobileUser">
+        update MOBILE_USER set USERNAME=#{userName} where USERID=#{USERID}
+    </update>
+</mapper>
