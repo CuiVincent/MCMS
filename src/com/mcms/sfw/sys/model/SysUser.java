@@ -16,7 +16,6 @@ public class SysUser extends BaseModel {
     private String EDATE;
     private String PASSWORD;
     private String CODE;
-    private String MAC;
 
 
     public String getCUSERID() {
@@ -65,14 +64,6 @@ public class SysUser extends BaseModel {
 
     public void setPASSWORD(String PASSWORD) {
         this.PASSWORD = PASSWORD;
-    }
-
-    public String getMAC() {
-        return MAC;
-    }
-
-    public void setMAC(String MAC) {
-        this.MAC = MAC;
     }
 
     public String getNAME() {
